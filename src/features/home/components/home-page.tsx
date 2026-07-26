@@ -48,13 +48,13 @@ export function HomePage({
           <p className="mt-6 max-w-2xl text-lg leading-8">{profile.intro}</p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Link href="/projects" className="btn-primary">
-              View Projects
+              Voir les projets
             </Link>
             <a href="/resume" className="btn-secondary" download>
-              Download Resume
+              Télécharger le CV
             </a>
             <Link href="/contact" className="btn-secondary">
-              Contact Me
+              Me contacter
             </Link>
           </div>
         </div>
@@ -62,10 +62,10 @@ export function HomePage({
           <div className="float-snippet">
             <CodeWindow
               lines={[
-                "const developer = {",
+                "const developpeur = {",
                 `  name: '${profile.name}',`,
-                "  focus: ['backend', 'fullstack', 'ai'],",
-                "  builds: 'scalable products',",
+                "  focus: ['backend', 'fullstack', 'ia'],",
+                "  construit: 'produits scalables',",
                 "};",
               ]}
             />
@@ -80,9 +80,9 @@ export function HomePage({
 
       <section className="portfolio-container portfolio-section">
         <SectionHeading
-          eyebrow="Tech stack"
-          title="Tools for scalable web, backend, cloud, data, and AI systems."
-          description="A practical stack focused on modern delivery, maintainable architecture, and production-ready applications."
+          eyebrow="Stack technique"
+          title="Des outils pour le web, le backend, le cloud, la data et l'IA."
+          description="Une stack pragmatique orientee livraison moderne, architecture maintenable et applications pretes pour la production."
         />
         <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-5">
           {techStack.map((group) => (
@@ -106,8 +106,8 @@ export function HomePage({
 
       <section className="portfolio-container portfolio-section">
         <SectionHeading
-          eyebrow="Featured projects"
-          title="Applications and APIs built with clean technical foundations."
+          eyebrow="Projets selectionnes"
+          title="Applications et API construites sur des bases techniques solides."
         />
         <div className="grid gap-6 md:grid-cols-2">
           {featuredProjects.map((project) => (
@@ -117,7 +117,7 @@ export function HomePage({
       </section>
 
       <section className="portfolio-container portfolio-section grid gap-10 lg:grid-cols-[0.85fr_1.15fr]">
-        <SectionHeading eyebrow="Skills" title="Balanced execution across product and engineering layers." />
+        <SectionHeading eyebrow="Competences" title="Une execution equilibree entre produit et engineering." />
         <div className="glass-card space-y-5">
           {skillLevels.map((skill) => (
             <div key={skill.label}>
@@ -134,7 +134,7 @@ export function HomePage({
       </section>
 
       <section className="portfolio-container portfolio-section">
-        <SectionHeading eyebrow="Testimonials" title="A practical, senior engineering collaboration style." />
+        <SectionHeading eyebrow="Temoignages" title="Une collaboration senior, claire et pragmatique." />
         <div className="grid gap-5 md:grid-cols-3">
           {testimonials.map((testimonial) => (
             <article key={testimonial.name} className="glass-card">
@@ -151,12 +151,12 @@ export function HomePage({
         <div className="glass-card grid gap-8 lg:grid-cols-[0.8fr_1.2fr]">
           <div>
             <p className="chip mb-5">GitHub</p>
-            <h2>Latest repositories and contribution activity.</h2>
+            <h2>Derniers repositories et activite de contribution.</h2>
             <p className="mt-4">
-              A visual placeholder for contribution history, recent repositories, and ongoing technical exploration.
+              Un apercu visuel pour l&apos;historique de contributions, les repositories recents et l&apos;exploration technique.
             </p>
             <a className="btn-secondary mt-6" href={site.socials.github} target="_blank" rel="noreferrer">
-              View GitHub
+              Voir GitHub
             </a>
           </div>
           <div className="grid grid-cols-12 gap-2">

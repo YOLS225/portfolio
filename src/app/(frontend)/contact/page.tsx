@@ -1,8 +1,8 @@
 import { ContactPage } from "@/features/contact";
-import { getSiteData } from "@/shared/data/portfolio";
+import { getProfileData, getSiteData } from "@/shared/data/portfolio";
 
 export default async function Contact() {
-  const site = await getSiteData();
+  const [profile, site] = await Promise.all([getProfileData(), getSiteData()]);
 
-  return <ContactPage site={site} />;
+  return <ContactPage profile={profile} site={site} />;
 }

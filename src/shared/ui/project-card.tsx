@@ -7,6 +7,8 @@ type ProjectCardProps = {
 };
 
 export function ProjectCard({ project }: ProjectCardProps) {
+  const liveUrl = project.liveUrl?.trim();
+
   return (
     <article className="glass-card group flex min-h-full flex-col">
       <Link href={`/projects/${project.slug}`} className="no-underline">
@@ -33,14 +35,16 @@ export function ProjectCard({ project }: ProjectCardProps) {
         </div>
         <div className="mt-auto flex flex-wrap gap-3 pt-4">
           <Link href={`/projects/${project.slug}`} className="btn-secondary min-h-10 px-4 text-sm">
-            Case study
+            Etude de cas
           </Link>
           <a className="btn-secondary min-h-10 px-4 text-sm" href={project.githubUrl} target="_blank" rel="noreferrer">
             GitHub
           </a>
-          <a className="btn-primary min-h-10 px-4 text-sm" href={project.liveUrl}>
-            Live Demo
-          </a>
+          {liveUrl ? (
+            <a className="btn-primary min-h-10 px-4 text-sm" href={liveUrl}>
+              Demo live
+            </a>
+          ) : null}
         </div>
       </div>
     </article>

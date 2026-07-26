@@ -13,11 +13,13 @@ export function ProjectDetailPage({ project }: ProjectDetailPageProps) {
     notFound();
   }
 
+  const liveUrl = project.liveUrl?.trim();
+
   return (
     <>
       <section className="portfolio-container pt-32 pb-16 md:pt-40">
         <Link href="/projects" className="font-mono text-xs tracking-[0.1em] text-tertiary uppercase no-underline">
-          Back to projects
+          Retour aux projets
         </Link>
         <div className="mt-8 grid gap-10 lg:grid-cols-[1fr_0.7fr]">
           <div>
@@ -30,15 +32,17 @@ export function ProjectDetailPage({ project }: ProjectDetailPageProps) {
               <a className="btn-secondary" href={project.githubUrl} target="_blank" rel="noreferrer">
                 GitHub
               </a>
-              <a className="btn-primary" href={project.liveUrl}>
-                Live Demo
-              </a>
+              {liveUrl ? (
+                <a className="btn-primary" href={liveUrl}>
+                  Demo live
+                </a>
+              ) : null}
             </div>
           </div>
           <div className={`min-h-80 rounded-xl bg-gradient-to-br ${project.gradient} p-px`}>
             <div className="grid h-full rounded-xl bg-black/30 p-8 backdrop-blur-sm">
               <div className="self-end">
-                <p className="font-mono text-xs tracking-[0.1em] text-white/70 uppercase">Role</p>
+                <p className="font-mono text-xs tracking-[0.1em] text-white/70 uppercase">Rôle</p>
                 <p className="mt-3 text-2xl font-semibold text-white">{project.role}</p>
               </div>
             </div>
@@ -54,11 +58,11 @@ export function ProjectDetailPage({ project }: ProjectDetailPageProps) {
 
       <section className="portfolio-container grid gap-8 pb-24 lg:grid-cols-[0.9fr_1.1fr]">
         <div className="glass-card">
-          <p className="chip mb-5">Outcome</p>
+          <p className="chip mb-5">Resultat</p>
           <p className="text-lg leading-8">{project.outcome}</p>
         </div>
         <div className="glass-card">
-          <p className="chip mb-5">System highlights</p>
+          <p className="chip mb-5">Points forts du systeme</p>
           <ul className="space-y-4 text-on-surface-variant">
             {project.highlights.map((highlight) => (
               <li key={highlight} className="border-l border-tertiary/50 pl-4">

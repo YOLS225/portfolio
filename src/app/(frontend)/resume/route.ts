@@ -7,21 +7,21 @@ export function GET() {
     "Yoann Lasm",
     siteConfig.role,
     "",
-    "Summary",
-    "I build scalable web applications, modern backend systems and data-driven products.",
+    "CV",
+    "Je construis des applications web scalables, des systemes backend modernes et des produits data-driven.",
     "",
-    "Core stack",
+    "Stack principale",
     "Next.js, React, TypeScript, TailwindCSS, NestJS, Spring Boot, Node.js, Java, PostgreSQL, Prisma, Redis, Docker, AWS, Python, SQL, OpenAI API.",
     "",
     "Focus",
-    "Clean Architecture, scalable systems, testing, cloud, data products, and artificial intelligence.",
+    "Clean Architecture, systemes scalables, tests, cloud, produits data et intelligence artificielle.",
     "",
     `Contact: ${siteConfig.email}`,
   ].join("\n");
 
   return new Response(body, {
     headers: {
-      "Content-Disposition": 'attachment; filename="Yoann-Lasm-Resume.txt"',
+      "Content-Disposition": 'attachment; filename="Yoann-Lasm-CV.txt"',
       "Content-Type": "text/plain; charset=utf-8",
     },
   });

@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 import type { ProfileData } from "@/shared/data/portfolio";
 import { CodeWindow } from "@/shared/ui/code-window";
 import { MetricCard } from "@/shared/ui/metric-card";
@@ -13,29 +15,35 @@ export function AboutPage({ profile, stats }: AboutPageProps) {
   return (
     <>
       <PageHero
-        eyebrow="About me"
-        title="Fullstack developer focused on scalable architecture and AI-enabled products."
-        description="I build modern web applications, backend systems, and data-driven products with a strong interest in clean architecture, testing, cloud deployment, and artificial intelligence."
+        eyebrow="A propos"
+        title="Developpeur fullstack oriente architecture scalable et produits IA."
+        description="Je construis des applications web modernes, des systemes backend et des produits data-driven avec un interet fort pour la clean architecture, les tests, le cloud et l'intelligence artificielle."
       />
 
       <section className="portfolio-container grid gap-10 pb-24 lg:grid-cols-[0.85fr_1.15fr]">
-        <div className="glass-card min-h-[460px]">
-          <div className="grid h-full place-items-center rounded-xl border border-glass-border bg-gradient-to-br from-primary-container/40 via-secondary-container/25 to-tertiary-container/30 p-8 text-center">
-            <div>
-              <div className="mx-auto mb-6 grid h-28 w-28 place-items-center rounded-full border border-white/20 bg-black/30 font-mono text-3xl text-tertiary">
-                YL
-              </div>
-              <p className="font-mono text-xs tracking-[0.1em] text-white/75 uppercase">Professional portrait placeholder</p>
+        <div className="glass-card min-h-[460px] overflow-hidden p-0">
+          <div className="relative h-full min-h-[460px] rounded-xl border border-glass-border bg-gradient-to-br from-primary-container/40 via-secondary-container/25 to-tertiary-container/30">
+            <Image
+              src="/yoann.png"
+              alt="Portrait de Yoann Lasm"
+              fill
+              sizes="(max-width: 1024px) 100vw, 38vw"
+              className="object-cover object-[50%_28%] grayscale"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent" />
+            <div className="absolute inset-x-6 bottom-6">
+              <p className="font-mono text-xs tracking-[0.1em] text-tertiary uppercase">{profile.role}</p>
+              <p className="mt-2 text-2xl font-semibold text-white">{profile.name}</p>
             </div>
           </div>
         </div>
 
         <div>
-          <SectionHeading eyebrow="Profile" title="Backend strength, product sensibility, and disciplined delivery." />
+          <SectionHeading eyebrow="Profil" title="Solidite backend, sensibilite produit et execution disciplinee." />
           <p className="text-lg leading-8">
-            I work across frontend and backend, with a deeper focus on API design, database modeling, system boundaries,
-            and reliable product foundations. I like codebases that are explicit, testable, and structured enough to
-            evolve without slowing the team down.
+            Je travaille entre frontend et backend, avec un focus particulier sur le design d&apos;API, la modelisation des
+            donnees, les frontieres de systeme et les fondations produit fiables. J&apos;aime les codebases explicites,
+            testables et assez structurees pour evoluer sans ralentir l&apos;equipe.
           </p>
           <div className="mt-8 grid gap-3 sm:grid-cols-2">
             {profile.expertise.map((item) => (
@@ -56,10 +64,10 @@ export function AboutPage({ profile, stats }: AboutPageProps) {
         <CodeWindow
           lines={[
             "type Focus = {",
-            "  architecture: 'clean and scalable';",
-            "  backend: 'APIs, data, reliability';",
-            "  frontend: 'modern product interfaces';",
-            "  ai: 'practical product integrations';",
+            "  architecture: 'propre et scalable';",
+            "  backend: 'API, data, fiabilite';",
+            "  frontend: 'interfaces produit modernes';",
+            "  ai: 'integrations produit concretes';",
             "};",
           ]}
         />

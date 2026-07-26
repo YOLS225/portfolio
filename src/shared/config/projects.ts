@@ -11,7 +11,7 @@ export type Project = {
   highlights: string[];
   gradient: string;
   githubUrl: string;
-  liveUrl: string;
+  liveUrl?: string;
 };
 
 export const projects: Project[] = [
@@ -21,20 +21,20 @@ export const projects: Project[] = [
     year: "2026",
     category: "Backend",
     summary:
-      "Scalable realtime messaging API with authentication, conversations, message persistence, and production-ready service boundaries.",
+      "API de messagerie temps reel scalable avec authentification, conversations, persistance des messages et frontieres de services pretes pour la production.",
     outcome:
-      "Built a clean backend foundation for chat products with typed contracts, modular services, and reliable message flows.",
-    role: "Backend architecture, API design, testing",
+      "Construction d'une base backend propre pour des produits de chat, avec contrats types, services modulaires et flux de messages fiables.",
+    role: "Architecture backend, design d'API, tests",
     stack: ["NestJS", "Node.js", "PostgreSQL", "Redis", "WebSocket"],
     metrics: [
-      { label: "Latency", value: "<80ms" },
-      { label: "Coverage", value: "85%" },
+      { label: "Latence", value: "<80ms" },
+      { label: "Couverture", value: "85%" },
       { label: "Modules", value: "12" },
     ],
     highlights: [
-      "JWT authentication with protected realtime channels.",
-      "Conversation and message modules separated with clean service contracts.",
-      "Redis-ready architecture for horizontal scaling.",
+      "Authentification JWT avec canaux temps reel proteges.",
+      "Modules conversation et message separes par des contrats de service clairs.",
+      "Architecture compatible Redis pour le scaling horizontal.",
     ],
     gradient: "from-primary-container via-secondary-container to-tertiary-container",
     githubUrl: "https://github.com/",
@@ -46,20 +46,20 @@ export const projects: Project[] = [
     year: "2025",
     category: "Fullstack",
     summary:
-      "Collaborative task management application with realtime updates, team boards, filters, and a focused productivity UI.",
+      "Application collaborative de gestion de taches avec mises a jour temps reel, tableaux d'equipe, filtres et interface orientee productivite.",
     outcome:
-      "Created a responsive workflow surface for teams that need clear task ownership and fast state synchronization.",
-    role: "Fullstack engineering, frontend architecture, realtime UX",
+      "Creation d'une surface de travail responsive pour des equipes qui ont besoin d'une propriete claire des taches et d'une synchronisation rapide.",
+    role: "Engineering fullstack, architecture frontend, UX temps reel",
     stack: ["Next.js", "React", "TypeScript", "Zustand", "Prisma"],
     metrics: [
-      { label: "Boards", value: "Multi" },
-      { label: "Sync", value: "Live" },
-      { label: "UI", value: "RWD" },
+      { label: "Tableaux", value: "Multi" },
+      { label: "Sync", value: "Temps reel" },
+      { label: "UI", value: "Responsive" },
     ],
     highlights: [
-      "Optimistic task updates for fast interactions.",
-      "Board, list, and detail views designed for daily use.",
-      "Reusable state patterns for filters, views, and selections.",
+      "Mises a jour optimistes pour des interactions rapides.",
+      "Vues tableau, liste et detail pensees pour un usage quotidien.",
+      "Patterns d'etat reutilisables pour les filtres, vues et selections.",
     ],
     gradient: "from-secondary-container via-primary-container to-primary",
     githubUrl: "https://github.com/",
@@ -71,20 +71,20 @@ export const projects: Project[] = [
     year: "2025",
     category: "Frontend",
     summary:
-      "Weather dashboard with location search, forecast panels, clean responsive layout, and data visualization patterns.",
+      "Dashboard meteo avec recherche de localisation, panneaux de prevision, layout responsive clair et patterns de visualisation.",
     outcome:
-      "Turned weather data into a polished product surface with strong hierarchy and fast scanning on mobile and desktop.",
-    role: "Frontend engineering, UI design, API integration",
+      "Transformation de donnees meteo en interface produit soignee, avec hierarchie forte et lecture rapide sur mobile et desktop.",
+    role: "Engineering frontend, design UI, integration API",
     stack: ["Next.js", "React", "TypeScript", "TailwindCSS", "REST API"],
     metrics: [
-      { label: "Views", value: "4" },
+      { label: "Vues", value: "4" },
       { label: "Mobile", value: "100%" },
-      { label: "APIs", value: "2" },
+      { label: "API", value: "2" },
     ],
     highlights: [
-      "Forecast cards with clear visual hierarchy.",
-      "Search and geolocation-ready data flow.",
-      "Responsive dashboard structure for compact screens.",
+      "Cartes de prevision avec hierarchie visuelle claire.",
+      "Flux de donnees pret pour la recherche et la geolocalisation.",
+      "Structure dashboard responsive pour les petits ecrans.",
     ],
     gradient: "from-tertiary-container via-primary-container to-secondary-container",
     githubUrl: "https://github.com/",
@@ -96,20 +96,20 @@ export const projects: Project[] = [
     year: "2024",
     category: "Frontend",
     summary:
-      "Movie discovery interface with search, category browsing, detail pages, and a clean visual system for media content.",
+      "Interface de decouverte de films avec recherche, categories, pages detail et systeme visuel clair pour le contenu media.",
     outcome:
-      "Built a smooth browsing experience for structured media data with accessible cards and quick discovery paths.",
-    role: "Frontend engineering, routing, UI composition",
+      "Construction d'une experience de navigation fluide pour des donnees media structurees, avec cartes accessibles et parcours rapides.",
+    role: "Engineering frontend, routing, composition UI",
     stack: ["React", "TypeScript", "TailwindCSS", "REST API"],
     metrics: [
       { label: "Pages", value: "6" },
-      { label: "Search", value: "Fast" },
-      { label: "Cards", value: "Reusable" },
+      { label: "Recherche", value: "Rapide" },
+      { label: "Cartes", value: "Reutilisables" },
     ],
     highlights: [
-      "Reusable media card and detail layouts.",
-      "Search-first navigation for quick discovery.",
-      "Responsive content grids.",
+      "Cartes media et layouts detail reutilisables.",
+      "Navigation orientee recherche pour une decouverte rapide.",
+      "Grilles de contenu responsives.",
     ],
     gradient: "from-primary-container via-tertiary-container to-secondary-container",
     githubUrl: "https://github.com/",
@@ -121,20 +121,20 @@ export const projects: Project[] = [
     year: "2024",
     category: "Backend",
     summary:
-      "REST API for jobs, companies, applications, and authentication with pragmatic domain modeling and validation.",
+      "API REST pour offres, entreprises, candidatures et authentification avec modelisation metier pragmatique et validation.",
     outcome:
-      "Delivered a backend service that can support a job marketplace MVP with clean endpoints and database structure.",
-    role: "Backend engineering, data modeling, API documentation",
+      "Livraison d'un service backend capable de supporter un MVP de marketplace emploi avec endpoints propres et structure de donnees claire.",
+    role: "Engineering backend, modelisation data, documentation API",
     stack: ["Spring Boot", "Java", "PostgreSQL", "Docker"],
     metrics: [
-      { label: "Endpoints", value: "35+" },
-      { label: "Entities", value: "9" },
-      { label: "Docker", value: "Yes" },
+      { label: "Routes API", value: "35+" },
+      { label: "Entites", value: "9" },
+      { label: "Docker", value: "Oui" },
     ],
     highlights: [
-      "Company, job, user, and application domains separated clearly.",
-      "Validation and error handling designed for frontend consumption.",
-      "Dockerized local development workflow.",
+      "Domaines entreprise, offre, utilisateur et candidature clairement separes.",
+      "Validation et gestion d'erreurs pensees pour la consommation frontend.",
+      "Workflow de developpement local dockerise.",
     ],
     gradient: "from-secondary-container via-tertiary-container to-primary-container",
     githubUrl: "https://github.com/",
@@ -142,24 +142,24 @@ export const projects: Project[] = [
   },
   {
     slug: "gas-delivery-platform",
-    title: "Gas Delivery Platform",
+    title: "Plateforme de livraison de gaz",
     year: "2023",
-    category: "Product",
+    category: "Produit",
     summary:
-      "Delivery platform concept for ordering gas bottles with customer flow, admin operations, and delivery tracking foundations.",
+      "Concept de plateforme de livraison pour commander des bouteilles de gaz, avec parcours client, operations admin et bases de suivi livraison.",
     outcome:
-      "Mapped a practical local-commerce product into clear workflows for ordering, dispatch, and operational follow-up.",
-    role: "Product engineering, backend design, admin UX",
+      "Transformation d'un produit de commerce local en workflows clairs pour commande, dispatch et suivi operationnel.",
+    role: "Engineering produit, design backend, UX admin",
     stack: ["Next.js", "NestJS", "PostgreSQL", "Prisma", "Docker"],
     metrics: [
-      { label: "Flows", value: "5" },
-      { label: "Roles", value: "3" },
-      { label: "Admin", value: "Ready" },
+      { label: "Flux", value: "5" },
+      { label: "Rôles", value: "3" },
+      { label: "Admin", value: "Pret" },
     ],
     highlights: [
-      "Customer order flow with delivery status states.",
-      "Admin dashboard for order review and dispatch.",
-      "Scalable domain model for local delivery operations.",
+      "Parcours de commande client avec etats de livraison.",
+      "Dashboard admin pour revue des commandes et dispatch.",
+      "Modele metier scalable pour operations de livraison locale.",
     ],
     gradient: "from-tertiary-container via-secondary-container to-primary-container",
     githubUrl: "https://github.com/",
@@ -171,20 +171,20 @@ export const projects: Project[] = [
     year: "2023",
     category: "Data",
     summary:
-      "Analytical SQL project exploring business datasets, KPIs, reporting queries, and dashboard-ready insights.",
+      "Projet analytique SQL explorant datasets business, KPI, requetes de reporting et insights prets pour dashboard.",
     outcome:
-      "Produced clear data slices and reusable queries for product, revenue, and operational decision-making.",
-    role: "Data analysis, SQL modeling, reporting",
+      "Production de segments de donnees clairs et de requetes reutilisables pour les decisions produit, revenu et operations.",
+    role: "Analyse data, modelisation SQL, reporting",
     stack: ["SQL", "PostgreSQL", "Python", "Pandas", "Power BI"],
     metrics: [
-      { label: "Queries", value: "50+" },
+      { label: "Requetes", value: "50+" },
       { label: "KPIs", value: "12" },
-      { label: "Reports", value: "4" },
+      { label: "Rapports", value: "4" },
     ],
     highlights: [
-      "Reusable KPI queries for revenue and product analysis.",
-      "Data cleaning and exploration with Python.",
-      "Dashboard-ready outputs for BI workflows.",
+      "Requetes KPI reutilisables pour l'analyse revenu et produit.",
+      "Nettoyage et exploration de donnees avec Python.",
+      "Sorties pretes pour dashboard dans des workflows BI.",
     ],
     gradient: "from-primary-container via-secondary-container to-tertiary-container",
     githubUrl: "https://github.com/",

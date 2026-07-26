@@ -63,33 +63,33 @@ export type SiteData = typeof fallbackSiteConfig;
 
 const fallbackExperience: ExperienceItem[] = [
   {
-    period: "2024 - Now",
-    title: "Fullstack Developer",
-    company: "Independent projects",
+    period: "2024 - Aujourd'hui",
+    title: "Developpeur Fullstack",
+    company: "Projets independants",
     achievements: [
-      "Built fullstack applications with Next.js, NestJS, PostgreSQL, and Docker.",
-      "Designed backend APIs with authentication, validation, and clean service boundaries.",
-      "Explored AI product workflows using OpenAI API, RAG concepts, and vector search foundations.",
+      "Construction d'applications fullstack avec Next.js, NestJS, PostgreSQL et Docker.",
+      "Conception d'API backend avec authentification, validation et frontieres de services claires.",
+      "Exploration de workflows produit IA avec OpenAI API, concepts RAG et bases de recherche vectorielle.",
     ],
   },
   {
     period: "2022 - 2024",
-    title: "Backend Engineer",
-    company: "Applied learning and production projects",
+    title: "Ingenieur Backend",
+    company: "Apprentissage applique et projets de production",
     achievements: [
-      "Developed REST APIs with Spring Boot, Java, Node.js, and NestJS.",
-      "Modeled relational data for job boards, delivery workflows, chat systems, and analytics projects.",
-      "Added testing, Docker workflows, and CI-oriented project structure.",
+      "Developpement d'API REST avec Spring Boot, Java, Node.js et NestJS.",
+      "Modelisation de donnees relationnelles pour job boards, livraison, chat et projets analytiques.",
+      "Ajout de tests, workflows Docker et structures de projet orientees CI.",
     ],
   },
   {
     period: "2020 - 2022",
-    title: "Web Developer",
-    company: "Frontend and data projects",
+    title: "Developpeur Web",
+    company: "Projets frontend et data",
     achievements: [
-      "Built responsive interfaces with React, TypeScript, and TailwindCSS.",
-      "Created data analysis projects with SQL, Python, Pandas, and Power BI.",
-      "Improved UI structure, routing, reusable components, and dashboard layouts.",
+      "Construction d'interfaces responsives avec React, TypeScript et TailwindCSS.",
+      "Creation de projets d'analyse de donnees avec SQL, Python, Pandas et Power BI.",
+      "Amelioration de la structure UI, du routing, des composants reutilisables et des layouts dashboard.",
     ],
   },
 ];
@@ -108,7 +108,7 @@ function mapProject(project: PayloadProject): Project {
     highlights: project.highlights?.map((highlight) => highlight.text) || [],
     gradient: project.gradient || "from-primary-container via-secondary-container to-tertiary-container",
     githubUrl: project.githubUrl || "https://github.com/",
-    liveUrl: project.liveUrl || `/projects/${project.slug}`,
+    liveUrl: project.liveUrl?.trim() || undefined,
   };
 }
 
@@ -187,10 +187,10 @@ export async function getProfileData(): Promise<ProfileData> {
     name: fallbackSiteConfig.name,
     logo: fallbackSiteConfig.logo,
     role: fallbackSiteConfig.role,
-    intro: "I build scalable web applications, modern backend systems and data-driven products.",
+    intro: "Je construis des applications web scalables, des systemes backend modernes et des produits data-driven.",
     email: fallbackSiteConfig.email,
     location: fallbackSiteConfig.location,
-    roles: ["Fullstack Developer", "Backend Engineer", "AI Enthusiast"],
+    roles: ["Developpeur Fullstack", "Ingenieur Backend", "Passionne IA"],
     expertise: fallbackExpertise,
   });
 }

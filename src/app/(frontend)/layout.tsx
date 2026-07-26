@@ -3,7 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 
 import { SiteFooter } from "@/shared/ui/site-footer";
 import { SiteHeader } from "@/shared/ui/site-header";
-import { getSiteData } from "@/shared/data/portfolio";
+import { getProfileData, getSiteData } from "@/shared/data/portfolio";
 
 import "../globals.css";
 
@@ -18,8 +18,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Yoann Lasm | Fullstack Developer",
-  description: "Fullstack developer, backend engineer, and AI enthusiast portfolio.",
+  title: "Yoann Lasm | Developpeur Fullstack",
+  description: "Portfolio de developpeur fullstack, ingenieur backend et passionne d'IA.",
 };
 
 export default async function FrontendLayout({
@@ -27,17 +27,17 @@ export default async function FrontendLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const site = await getSiteData();
+  const [profile, site] = await Promise.all([getProfileData(), getSiteData()]);
 
   return (
     <html
-      lang="en"
+      lang="fr"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col">
-        <SiteHeader site={site} />
+        <SiteHeader profile={profile} site={site} />
         <main className="flex flex-1 flex-col">{children}</main>
-        <SiteFooter site={site} />
+        <SiteFooter profile={profile} site={site} />
       </body>
     </html>
   );

@@ -10,9 +10,9 @@ export function ProjectsPage({ projects }: ProjectsPageProps) {
   return (
     <>
       <PageHero
-        eyebrow="Projects"
-        title="Featured projects across backend, fullstack, data, and AI-ready products."
-        description="A curated set of applications and APIs built around scalable systems, clean architecture, and polished user interfaces."
+        eyebrow="Projets"
+        title="Projets selectionnes en backend, fullstack, data et produits orientes IA."
+        description="Une selection d'applications et d'API construites autour de systemes scalables, d'architecture propre et d'interfaces soignees."
       />
       <section className="portfolio-container pb-24">
         <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">

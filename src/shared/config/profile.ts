@@ -1,40 +1,40 @@
 export const stats = [
-  { label: "Projects Completed", value: "20+" },
-  { label: "GitHub Repositories", value: "35+" },
-  { label: "Years of Coding", value: "5+" },
-  { label: "Technologies Mastered", value: "25+" },
+  { label: "Projets realises", value: "20+" },
+  { label: "Repositories GitHub", value: "35+" },
+  { label: "Annees de code", value: "5+" },
+  { label: "Technologies maitrisees", value: "25+" },
 ];
 
 export const techStack = [
   {
     category: "Frontend",
     icon: "FE",
-    description: "Modern interfaces, product dashboards, and responsive web applications.",
+    description: "Interfaces modernes, dashboards produit et applications web responsives.",
     items: ["Next.js", "React", "TypeScript", "TailwindCSS", "Shadcn UI", "Zustand"],
   },
   {
     category: "Backend",
     icon: "BE",
-    description: "APIs, domain services, authentication, databases, and scalable backend systems.",
+    description: "API, services metier, authentification, bases de donnees et systemes backend scalables.",
     items: ["NestJS", "Spring Boot", "Node.js", "Java", "PostgreSQL", "Prisma", "Redis"],
   },
   {
     category: "Cloud",
     icon: "CL",
-    description: "Deployment workflows, containers, storage, and CI automation.",
+    description: "Workflows de deploiement, conteneurs, stockage et automatisation CI.",
     items: ["Docker", "AWS", "S3", "GitHub Actions"],
   },
   {
     category: "Data",
     icon: "DA",
-    description: "Data analysis, reporting, SQL exploration, and business intelligence.",
+    description: "Analyse de donnees, reporting, exploration SQL et business intelligence.",
     items: ["Python", "Pandas", "SQL", "Power BI"],
   },
   {
-    category: "AI",
+    category: "IA",
     icon: "AI",
-    description: "AI-enabled product features, retrieval workflows, and LLM integrations.",
-    items: ["OpenAI API", "LangChain", "RAG", "Vector Databases"],
+    description: "Fonctionnalites produit IA, workflows de retrieval et integrations LLM.",
+    items: ["OpenAI API", "LangChain", "RAG", "Bases vectorielles"],
   },
 ];
 
@@ -43,37 +43,37 @@ export const skillLevels = [
   { label: "Frontend", value: 88 },
   { label: "Architecture", value: 86 },
   { label: "Cloud", value: 78 },
-  { label: "Databases", value: 84 },
-  { label: "Testing", value: 80 },
+  { label: "Bases de donnees", value: 84 },
+  { label: "Tests", value: 80 },
   { label: "DevOps", value: 74 },
 ];
 
 export const expertise = [
-  "Software architecture",
+  "Architecture logicielle",
   "Clean Architecture",
-  "Scalable systems",
-  "Testing strategy",
-  "Cloud deployment",
-  "Artificial Intelligence",
+  "Systemes scalables",
+  "Strategie de test",
+  "Deploiement cloud",
+  "Intelligence artificielle",
 ];
 
 export const testimonials = [
   {
-    name: "Product Lead",
-    role: "SaaS team",
+    name: "Responsable Produit",
+    role: "Equipe SaaS",
     feedback:
-      "Yoann brings structure to ambiguous product problems and turns them into clean, maintainable engineering work.",
+      "Yoann structure les problemes produit ambigus et les transforme en travail technique clair et maintenable.",
   },
   {
-    name: "Engineering Manager",
-    role: "Platform team",
+    name: "Responsable Engineering",
+    role: "Equipe plateforme",
     feedback:
-      "Strong backend judgment, clear communication, and a practical sense for what needs to ship first.",
+      "Bon jugement backend, communication claire et sens pratique de ce qui doit partir en production en premier.",
   },
   {
-    name: "Founder",
-    role: "Early-stage product",
+    name: "Fondateur",
+    role: "Jeune produit",
     feedback:
-      "He helped us move from idea to a credible technical foundation without overcomplicating the product.",
+      "Il nous a aides a passer d'une idee a une base technique credible sans complexifier inutilement le produit.",
   },
 ];

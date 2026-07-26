@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: ProjectPageProps): Promise<Me
   const project = await getProjectDataBySlug(slug);
 
   return {
-    title: project ? `${project.title} | Yoann Portfolio` : "Project | Yoann Portfolio",
+    title: project ? `${project.title} | Portfolio Yoann` : "Projet | Portfolio Yoann",
     description: project?.summary,
   };
 }

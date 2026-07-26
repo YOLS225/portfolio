@@ -11,13 +11,13 @@ export function SkillsPage({ skillLevels, techStack }: SkillsPageProps) {
   return (
     <>
       <PageHero
-        eyebrow="Skills"
-        title="A technical stack for fullstack products, backend services, data, cloud, and AI."
-        description="The focus is not collecting tools. It is using the right set of technologies to build clear, scalable, testable systems."
+        eyebrow="Competences"
+        title="Une stack technique pour produits fullstack, services backend, data, cloud et IA."
+        description="L'objectif n'est pas d'accumuler des outils, mais d'utiliser les bonnes technologies pour construire des systemes clairs, scalables et testables."
       />
 
       <section className="portfolio-container pb-24">
-        <SectionHeading eyebrow="Core skills" title="Animated capability map." />
+        <SectionHeading eyebrow="Competences cles" title="Carte des capacites." />
         <div className="glass-card space-y-6">
           {skillLevels.map((skill) => (
             <div key={skill.label}>
@@ -34,7 +34,7 @@ export function SkillsPage({ skillLevels, techStack }: SkillsPageProps) {
       </section>
 
       <section className="portfolio-container pb-24">
-        <SectionHeading eyebrow="Stack" title="Technology categories." />
+        <SectionHeading eyebrow="Stack" title="Categories technologiques." />
         <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-5">
           {techStack.map((group) => (
             <article key={group.category} className="glass-card">

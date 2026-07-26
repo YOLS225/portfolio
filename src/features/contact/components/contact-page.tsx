@@ -1,24 +1,25 @@
-import type { SiteData } from "@/shared/data/portfolio";
+import type { ProfileData, SiteData } from "@/shared/data/portfolio";
 import { PageHero } from "@/shared/ui/page-hero";
 
 type ContactPageProps = {
+  profile: ProfileData;
   site: SiteData;
 };
 
-export function ContactPage({ site }: ContactPageProps) {
+export function ContactPage({ profile, site }: ContactPageProps) {
   const contactItems = [
-    { label: "Email", value: site.email, href: `mailto:${site.email}` },
+    { label: "Email", value: profile.email, href: `mailto:${profile.email}` },
     { label: "LinkedIn", value: "LinkedIn", href: site.socials.linkedin },
     { label: "GitHub", value: "GitHub", href: site.socials.github },
-    { label: "Location", value: site.location, href: "#" },
+    { label: "Localisation", value: profile.location, href: "#" },
   ];
 
   return (
     <>
       <PageHero
         eyebrow="Contact"
-        title="Let us build a scalable product or backend system."
-        description="Send a short brief about your application, API, data product, or AI idea. I will respond with the most practical next step."
+        title="Construisons un produit ou un backend scalable."
+        description="Envoie un court brief sur ton application, ton API, ton produit data ou ton idee IA. Je repondrai avec la prochaine etape la plus concrete."
       />
       <section className="portfolio-container grid gap-8 pb-24 lg:grid-cols-[0.8fr_1.2fr]">
         <div className="space-y-4">
@@ -31,8 +32,8 @@ export function ContactPage({ site }: ContactPageProps) {
         </div>
         <form className="glass-card grid gap-4">
           <label className="grid gap-2">
-            <span className="font-mono text-xs tracking-[0.1em] text-tertiary uppercase">Name</span>
-            <input className="min-h-12 px-4" name="name" placeholder="Your name" />
+            <span className="font-mono text-xs tracking-[0.1em] text-tertiary uppercase">Nom</span>
+            <input className="min-h-12 px-4" name="name" placeholder="Ton nom" />
           </label>
           <label className="grid gap-2">
             <span className="font-mono text-xs tracking-[0.1em] text-tertiary uppercase">Email</span>
@@ -40,10 +41,10 @@ export function ContactPage({ site }: ContactPageProps) {
           </label>
           <label className="grid gap-2">
             <span className="font-mono text-xs tracking-[0.1em] text-tertiary uppercase">Message</span>
-            <textarea className="min-h-40 resize-y p-4" name="message" placeholder="Tell me about the product, backend, data, or AI system" />
+            <textarea className="min-h-40 resize-y p-4" name="message" placeholder="Parle-moi du produit, du backend, de la data ou du systeme IA" />
           </label>
           <button className="btn-primary w-fit" type="button">
-            Send message
+            Envoyer le message
           </button>
         </form>
       </section>
