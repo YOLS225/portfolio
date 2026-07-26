@@ -6,10 +6,19 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "payload": "payload",
+    "payload:types": "payload generate:types",
+    "payload:importmap": "payload generate:importmap",
+    "payload:migrate": "payload migrate",
+    "payload:migrate:status": "payload migrate:status",
+    "payload:seed": "payload seed"
   },
   "dependencies": {
+    "@payloadcms/db-postgres": "^3.86.0",
+    "@payloadcms/next": "^3.86.0",
     "next": "16.2.10",
+    "payload": "^3.86.0",
     "react": "19.2.4",
     "react-dom": "19.2.4"
   },
