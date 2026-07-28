@@ -40,7 +40,7 @@ export function AboutPage({ profile, stats }: AboutPageProps) {
 
         <div>
           <SectionHeading eyebrow="Profil" title="Solidite backend, sensibilite produit et execution disciplinee." />
-          <p className="text-lg leading-8">
+          <p className="text-base leading-7 sm:text-lg sm:leading-8">
             Je travaille entre frontend et backend, avec un focus particulier sur le design d&apos;API, la modelisation des
             donnees, les frontieres de systeme et les fondations produit fiables. J&apos;aime les codebases explicites,
             testables et assez structurees pour evoluer sans ralentir l&apos;equipe.
@@ -52,7 +52,7 @@ export function AboutPage({ profile, stats }: AboutPageProps) {
               </div>
             ))}
           </div>
-          <div className="mt-8 grid grid-cols-2 gap-3">
+          <div className="mt-8 grid gap-3 sm:grid-cols-2">
             {stats.slice(0, 4).map((stat) => (
               <MetricCard key={stat.label} label={stat.label} value={stat.value} />
             ))}

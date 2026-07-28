@@ -27,7 +27,7 @@ export function ProjectDetailPage({ project }: ProjectDetailPageProps) {
               {project.category} / {project.year}
             </p>
             <h1 className="max-w-4xl text-balance">{project.title}</h1>
-            <p className="mt-6 max-w-2xl text-lg leading-8">{project.summary}</p>
+            <p className="mt-6 max-w-2xl text-base leading-7 sm:text-lg sm:leading-8">{project.summary}</p>
             <div className="mt-8 flex flex-wrap gap-3">
               <a className="btn-secondary" href={project.githubUrl} target="_blank" rel="noreferrer">
                 GitHub
@@ -43,7 +43,7 @@ export function ProjectDetailPage({ project }: ProjectDetailPageProps) {
             <div className="grid h-full rounded-xl bg-black/30 p-8 backdrop-blur-sm">
               <div className="self-end">
                 <p className="font-mono text-xs tracking-[0.1em] text-white/70 uppercase">Rôle</p>
-                <p className="mt-3 text-2xl font-semibold text-white">{project.role}</p>
+                <p className="mt-3 break-words text-xl font-semibold text-white sm:text-2xl">{project.role}</p>
               </div>
             </div>
           </div>
@@ -59,7 +59,7 @@ export function ProjectDetailPage({ project }: ProjectDetailPageProps) {
       <section className="portfolio-container grid gap-8 pb-24 lg:grid-cols-[0.9fr_1.1fr]">
         <div className="glass-card">
           <p className="chip mb-5">Resultat</p>
-          <p className="text-lg leading-8">{project.outcome}</p>
+          <p className="text-base leading-7 sm:text-lg sm:leading-8">{project.outcome}</p>
         </div>
         <div className="glass-card">
           <p className="chip mb-5">Points forts du systeme</p>

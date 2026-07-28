@@ -153,6 +153,7 @@
   html {
     min-height: 100%;
     background: var(--background);
+    overflow-x: clip;
     scroll-behavior: smooth;
     text-rendering: optimizeLegibility;
   }
@@ -160,6 +161,7 @@
   body {
     min-height: 100%;
     margin: 0;
+    overflow-x: clip;
     background:
       radial-gradient(circle at 20% 0%, rgb(192 193 255 / 12%), transparent 32rem),
       radial-gradient(circle at 82% 12%, rgb(76 215 246 / 10%), transparent 28rem),
@@ -200,11 +202,11 @@
   }
 
   h1 {
-    font-size: clamp(2.5rem, 7vw, 4rem);
+    font-size: clamp(2.25rem, 12vw, 4rem);
   }
 
   h2 {
-    font-size: clamp(2rem, 4vw, 2.5rem);
+    font-size: clamp(1.75rem, 8vw, 2.5rem);
   }
 
   p {
@@ -257,12 +259,12 @@
 
 @layer components {
   .portfolio-container {
-    width: min(100% - 40px, var(--container-max));
+    width: min(100% - 32px, var(--container-max));
     margin-inline: auto;
   }
 
   .portfolio-section {
-    padding-block: clamp(5rem, 12vw, var(--section-gap));
+    padding-block: clamp(4rem, 12vw, var(--section-gap));
   }
 
   .glass-panel {
@@ -271,6 +273,7 @@
     background: var(--glass-background);
     backdrop-filter: blur(12px);
     box-shadow: 0 24px 80px rgb(0 0 0 / 22%);
+    min-width: 0;
   }
 
   .glass-card {
@@ -283,6 +286,7 @@
       var(--glass-background);
     padding: 24px;
     backdrop-filter: blur(12px);
+    min-width: 0;
     transition:
       border-color 180ms ease,
       background 180ms ease,
@@ -306,6 +310,7 @@
     color: white;
     font-weight: 600;
     text-decoration: none;
+    text-align: center;
     box-shadow: 0 14px 36px rgb(128 131 255 / 22%);
     transition:
       box-shadow 180ms ease,
@@ -331,6 +336,7 @@
     color: var(--on-surface);
     font-weight: 600;
     text-decoration: none;
+    text-align: center;
     backdrop-filter: blur(12px);
     transition:
       border-color 180ms ease,
@@ -357,6 +363,8 @@
     letter-spacing: 0.1em;
     line-height: 1;
     text-transform: uppercase;
+    max-width: 100%;
+    overflow-wrap: anywhere;
   }
 
   .dock {
@@ -412,6 +420,27 @@
 @media (width >= 768px) {
   .portfolio-container {
     width: min(100% - 160px, var(--container-max));
+  }
+}
+
+@media (width < 640px) {
+  .glass-card {
+    padding: 18px;
+  }
+
+  .glass-panel {
+    border-radius: var(--radius-lg);
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+    min-height: 2.875rem;
+    padding-inline: 1rem;
+  }
+
+  .dock {
+    border-radius: 1.25rem;
   }
 }
 

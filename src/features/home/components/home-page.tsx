@@ -34,18 +34,18 @@ export function HomePage({
 }: HomePageProps) {
   return (
     <>
-      <section className="portfolio-container relative grid min-h-[96vh] items-center gap-10 overflow-hidden pt-32 pb-16 lg:grid-cols-[1.1fr_0.9fr]">
+      <section className="portfolio-container relative grid min-h-[92vh] items-center gap-8 overflow-hidden pt-44 pb-14 sm:pt-36 sm:pb-16 lg:min-h-[96vh] lg:grid-cols-[1.1fr_0.9fr]">
         <div className="hero-orbit left-[8%] top-[18%]" />
         <div className="hero-orbit right-[12%] bottom-[18%]" />
         <div className="relative z-10">
           <p className="chip mb-6">{profile.role}</p>
           <h1 className="max-w-4xl text-balance">{profile.name}</h1>
-          <div className="mt-5 flex flex-wrap gap-3 font-mono text-sm tracking-[0.1em] text-tertiary uppercase">
+          <div className="mt-5 flex flex-wrap gap-2 font-mono text-xs tracking-[0.1em] text-tertiary uppercase sm:gap-3 sm:text-sm">
             {profile.roles.map((role) => (
               <span key={role}>{role}</span>
             ))}
           </div>
-          <p className="mt-6 max-w-2xl text-lg leading-8">{profile.intro}</p>
+          <p className="mt-6 max-w-2xl text-base leading-7 sm:text-lg sm:leading-8">{profile.intro}</p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Link href="/projects" className="btn-primary">
               Voir les projets
@@ -70,7 +70,7 @@ export function HomePage({
               ]}
             />
           </div>
-          <div className="grid grid-cols-2 gap-3">
+          <div className="grid gap-3 sm:grid-cols-2">
             {stats.slice(0, 4).map((stat) => (
               <MetricCard key={stat.label} label={stat.label} value={stat.value} />
             ))}
@@ -159,7 +159,7 @@ export function HomePage({
               Voir GitHub
             </a>
           </div>
-          <div className="grid grid-cols-12 gap-2">
+        <div className="grid grid-cols-7 gap-2 sm:grid-cols-12">
             {Array.from({ length: 84 }).map((_, index) => (
               <span
                 key={index}

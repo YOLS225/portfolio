@@ -24,9 +24,9 @@ export function ContactPage({ profile, site }: ContactPageProps) {
       <section className="portfolio-container grid gap-8 pb-24 lg:grid-cols-[0.8fr_1.2fr]">
         <div className="space-y-4">
           {contactItems.map((item) => (
-            <a key={item.label} className="glass-card block no-underline" href={item.href} target={item.href.startsWith("http") ? "_blank" : undefined} rel="noreferrer">
+            <a key={item.label} className="glass-card block min-w-0 no-underline" href={item.href} target={item.href.startsWith("http") ? "_blank" : undefined} rel="noreferrer">
               <p className="font-mono text-xs tracking-[0.1em] text-tertiary uppercase">{item.label}</p>
-              <p className="mt-2 text-xl font-semibold text-on-surface">{item.value}</p>
+              <p className="mt-2 break-words text-lg font-semibold text-on-surface sm:text-xl">{item.value}</p>
             </a>
           ))}
         </div>
@@ -43,7 +43,7 @@ export function ContactPage({ profile, site }: ContactPageProps) {
             <span className="font-mono text-xs tracking-[0.1em] text-tertiary uppercase">Message</span>
             <textarea className="min-h-40 resize-y p-4" name="message" placeholder="Parle-moi du produit, du backend, de la data ou du systeme IA" />
           </label>
-          <button className="btn-primary w-fit" type="button">
+          <button className="btn-primary sm:w-fit" type="button">
             Envoyer le message
           </button>
         </form>
