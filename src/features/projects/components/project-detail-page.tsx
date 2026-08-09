@@ -39,11 +39,11 @@ export function ProjectDetailPage({ project }: ProjectDetailPageProps) {
               ) : null}
             </div>
           </div>
-          <div className={`min-h-80 rounded-xl bg-gradient-to-br ${project.gradient} p-px`}>
-            <div className="grid h-full rounded-xl bg-black/30 p-8 backdrop-blur-sm">
+          <div className="min-h-80 rounded-xl border border-glass-border bg-surface-container p-8">
+            <div className="grid h-full">
               <div className="self-end">
-                <p className="font-mono text-xs tracking-[0.1em] text-white/70 uppercase">Rôle</p>
-                <p className="mt-3 break-words text-xl font-semibold text-white sm:text-2xl">{project.role}</p>
+                <p className="font-mono text-xs tracking-[0.1em] text-primary uppercase">Rôle</p>
+                <p className="mt-3 break-words text-xl font-semibold text-on-surface sm:text-2xl">{project.role}</p>
               </div>
             </div>
           </div>

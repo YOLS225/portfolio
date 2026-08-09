@@ -2,7 +2,6 @@ import { HomePage } from "@/features/home";
 import {
   getFeaturedProjectsData,
   getProfileData,
-  getSiteData,
   getSkillLevelsData,
   getStatsData,
   getTechStackData,
@@ -10,10 +9,9 @@ import {
 } from "@/shared/data/portfolio";
 
 export default async function Home() {
-  const [featuredProjects, profile, site, skillLevels, techStack, testimonials] = await Promise.all([
+  const [featuredProjects, profile, skillLevels, techStack, testimonials] = await Promise.all([
     getFeaturedProjectsData(),
     getProfileData(),
-    getSiteData(),
     getSkillLevelsData(),
     getTechStackData(),
     getTestimonialsData(),
@@ -23,7 +21,6 @@ export default async function Home() {
     <HomePage
       featuredProjects={featuredProjects}
       profile={profile}
-      site={site}
       skillLevels={skillLevels}
       stats={getStatsData()}
       techStack={techStack}

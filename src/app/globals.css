@@ -1,71 +1,112 @@
 @import "tailwindcss";
 
 :root {
-  color-scheme: dark;
+  color-scheme: light dark;
 
-  --background: #09090b;
-  --foreground: #e5e1e4;
+  --card: hsl(0 0% 100%);
+  --card-foreground: hsl(0 0% 3.9%);
+  --popover: hsl(0 0% 100%);
+  --popover-foreground: hsl(0 0% 3.9%);
+  --primary: hsl(29 74% 51%);
+  --primary-foreground: hsl(28 76% 95%);
+  --secondary: hsl(214 100% 24%);
+  --secondary-foreground: hsl(0 0% 98%);
+  --muted: hsl(0 0% 96.1%);
+  --muted-foreground: hsl(0 0% 45.1%);
+  --accent: hsl(0 0% 96.1%);
+  --accent-foreground: hsl(0 0% 9%);
+  --destructive: hsl(0 84.2% 60.2%);
+  --destructive-foreground: hsl(0 0% 98%);
+  --border: hsl(0 0% 89.8%);
+  --input: hsl(0 0% 84%);
+  --ring: hsl(0 0% 3.9%);
+  --chart-1: 173 58% 39%;
+  --chart-2: 12 76% 61%;
+  --chart-3: 197 37% 24%;
+  --chart-4: 43 74% 66%;
+  --chart-5: 27 87% 67%;
+  --chart-6: 217 97% 38%;
+  --chart-7: 149 90% 38%;
+  --chart-8: 317 90% 37%;
+  --radius: 0.6rem;
+  --background: hsl(0 0% 100%);
+  --foreground: hsl(0 0% 3.9%);
+  --sidebar: hsl(0 0% 98%);
+  --sidebar-foreground: hsl(240 5.3% 26.1%);
+  --sidebar-primary: hsl(240 5.9% 10%);
+  --sidebar-primary-foreground: hsl(0 0% 98%);
+  --sidebar-accent: hsl(240 4.8% 95.9%);
+  --sidebar-accent-foreground: hsl(240 5.9% 10%);
+  --sidebar-border: hsl(220 13% 91%);
+  --sidebar-ring: hsl(217.2 91.2% 59.8%);
 
-  --surface: #131315;
-  --surface-dim: #131315;
-  --surface-bright: #39393b;
-  --surface-container-lowest: #0e0e10;
-  --surface-container-low: #1c1b1d;
-  --surface-container: #201f22;
-  --surface-container-high: #2a2a2c;
-  --surface-container-highest: #353437;
-  --surface-variant: #353437;
-  --on-surface: #e5e1e4;
-  --on-surface-variant: #c7c4d7;
-  --inverse-surface: #e5e1e4;
-  --inverse-on-surface: #313032;
-  --outline: #908fa0;
-  --outline-variant: #464554;
-  --surface-tint: #c0c1ff;
+  --surface: var(--card);
+  --surface-dim: var(--muted);
+  --surface-bright: hsl(0 0% 100%);
+  --surface-container-lowest: hsl(0 0% 100%);
+  --surface-container-low: hsl(0 0% 98%);
+  --surface-container: hsl(0 0% 96.1%);
+  --surface-container-high: hsl(0 0% 93%);
+  --surface-container-highest: hsl(0 0% 89.8%);
+  --surface-variant: hsl(220 13% 91%);
+  --on-surface: var(--foreground);
+  --on-surface-variant: hsl(0 0% 26%);
+  --inverse-surface: hsl(0 0% 9%);
+  --inverse-on-surface: hsl(0 0% 98%);
+  --outline: var(--muted-foreground);
+  --outline-variant: var(--border);
+  --surface-tint: var(--primary);
 
-  --primary: #c0c1ff;
-  --on-primary: #1000a9;
-  --primary-container: #8083ff;
-  --on-primary-container: #0d0096;
-  --inverse-primary: #494bd6;
-  --secondary: #ddb7ff;
-  --on-secondary: #490080;
-  --secondary-container: #6f00be;
-  --on-secondary-container: #d6a9ff;
-  --tertiary: #4cd7f6;
-  --on-tertiary: #003640;
-  --tertiary-container: #009eb9;
-  --on-tertiary-container: #002f38;
-  --error: #ffb4ab;
-  --on-error: #690005;
-  --error-container: #93000a;
-  --on-error-container: #ffdad6;
+  --on-primary: var(--primary-foreground);
+  --primary-container: hsl(29 74% 51%);
+  --on-primary-container: var(--primary-foreground);
+  --inverse-primary: hsl(29 74% 38%);
+  --on-secondary: var(--secondary-foreground);
+  --secondary-container: hsl(214 100% 24%);
+  --on-secondary-container: var(--secondary-foreground);
+  --tertiary: hsl(var(--chart-1));
+  --on-tertiary: hsl(0 0% 100%);
+  --tertiary-container: hsl(var(--chart-6));
+  --on-tertiary-container: hsl(0 0% 100%);
+  --error: var(--destructive);
+  --on-error: var(--destructive-foreground);
+  --error-container: hsl(0 84.2% 60.2%);
+  --on-error-container: var(--destructive-foreground);
 
-  --primary-fixed: #e1e0ff;
-  --primary-fixed-dim: #c0c1ff;
-  --on-primary-fixed: #07006c;
-  --on-primary-fixed-variant: #2f2ebe;
-  --secondary-fixed: #f0dbff;
-  --secondary-fixed-dim: #ddb7ff;
-  --on-secondary-fixed: #2c0051;
-  --on-secondary-fixed-variant: #6900b3;
-  --tertiary-fixed: #acedff;
-  --tertiary-fixed-dim: #4cd7f6;
-  --on-tertiary-fixed: #001f26;
-  --on-tertiary-fixed-variant: #004e5c;
+  --primary-fixed: hsl(28 76% 95%);
+  --primary-fixed-dim: hsl(29 74% 84%);
+  --on-primary-fixed: hsl(29 74% 22%);
+  --on-primary-fixed-variant: hsl(29 74% 38%);
+  --secondary-fixed: hsl(214 100% 94%);
+  --secondary-fixed-dim: hsl(214 100% 84%);
+  --on-secondary-fixed: hsl(214 100% 14%);
+  --on-secondary-fixed-variant: hsl(214 100% 24%);
+  --tertiary-fixed: hsl(var(--chart-1) / 18%);
+  --tertiary-fixed-dim: hsl(var(--chart-1) / 30%);
+  --on-tertiary-fixed: hsl(var(--chart-3));
+  --on-tertiary-fixed-variant: hsl(var(--chart-1));
 
-  --glass-background: rgb(255 255 255 / 3%);
-  --glass-background-strong: rgb(255 255 255 / 6%);
-  --glass-border: rgb(255 255 255 / 10%);
-  --glass-border-strong: rgb(255 255 255 / 30%);
-  --cyan-glow: rgb(76 215 246 / 24%);
-  --indigo-glow: rgb(192 193 255 / 22%);
+  --glass-background: hsl(0 0% 100% / 72%);
+  --glass-background-strong: hsl(0 0% 100% / 88%);
+  --glass-border: hsl(0 0% 3.9% / 10%);
+  --glass-border-strong: hsl(0 0% 3.9% / 24%);
+  --cyan-glow: hsl(var(--chart-1) / 18%);
+  --indigo-glow: hsl(var(--chart-6) / 16%);
+  --selection-background: hsl(29 74% 51% / 22%);
+  --link-decoration: hsl(var(--chart-1) / 55%);
+  --focus-ring: hsl(29 74% 51% / 16%);
+  --input-background: hsl(0 0% 100% / 86%);
+  --panel-shadow: hsl(214 100% 24% / 8%);
+  --primary-shadow: hsl(29 74% 51% / 22%);
+  --secondary-shadow: hsl(214 100% 24% / 20%);
+  --dock-background: hsl(0 0% 100% / 82%);
+  --skill-shadow: hsl(29 74% 51% / 20%);
 
-  --radius-sm: 0.25rem;
-  --radius-base: 0.5rem;
-  --radius-md: 0.75rem;
-  --radius-lg: 1rem;
-  --radius-xl: 1.5rem;
+  --radius-sm: calc(var(--radius) - 0.25rem);
+  --radius-base: calc(var(--radius) - 0.1rem);
+  --radius-md: var(--radius);
+  --radius-lg: calc(var(--radius) + 0.4rem);
+  --radius-xl: calc(var(--radius) + 0.9rem);
   --radius-full: 9999px;
 
   --space-base: 8px;
@@ -73,6 +114,94 @@
   --gutter: 24px;
   --section-gap: 128px;
   --element-gap: 16px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+
+    --card: hsl(240 6% 8%);
+    --card-foreground: hsl(0 0% 96%);
+    --popover: hsl(240 6% 8%);
+    --popover-foreground: hsl(0 0% 96%);
+    --primary: hsl(29 82% 58%);
+    --primary-foreground: hsl(28 76% 95%);
+    --secondary: hsl(214 92% 42%);
+    --secondary-foreground: hsl(0 0% 98%);
+    --muted: hsl(240 5% 14%);
+    --muted-foreground: hsl(240 5% 70%);
+    --accent: hsl(240 5% 16%);
+    --accent-foreground: hsl(0 0% 96%);
+    --destructive: hsl(0 72% 58%);
+    --destructive-foreground: hsl(0 0% 98%);
+    --border: hsl(240 5% 24%);
+    --input: hsl(240 5% 27%);
+    --ring: hsl(29 82% 58%);
+    --background: hsl(240 7% 5%);
+    --foreground: hsl(0 0% 96%);
+    --sidebar: hsl(240 6% 8%);
+    --sidebar-foreground: hsl(0 0% 92%);
+    --sidebar-primary: hsl(29 82% 58%);
+    --sidebar-primary-foreground: hsl(28 76% 95%);
+    --sidebar-accent: hsl(240 5% 16%);
+    --sidebar-accent-foreground: hsl(0 0% 96%);
+    --sidebar-border: hsl(240 5% 22%);
+    --sidebar-ring: hsl(217.2 91.2% 59.8%);
+
+    --surface: var(--card);
+    --surface-dim: hsl(240 7% 6%);
+    --surface-bright: hsl(240 5% 22%);
+    --surface-container-lowest: hsl(240 7% 5%);
+    --surface-container-low: hsl(240 6% 9%);
+    --surface-container: hsl(240 5% 12%);
+    --surface-container-high: hsl(240 5% 16%);
+    --surface-container-highest: hsl(240 5% 22%);
+    --surface-variant: hsl(240 5% 18%);
+    --on-surface: var(--foreground);
+    --on-surface-variant: hsl(240 5% 76%);
+    --inverse-surface: hsl(0 0% 96%);
+    --inverse-on-surface: hsl(240 7% 5%);
+    --outline: hsl(240 5% 60%);
+    --outline-variant: var(--border);
+    --surface-tint: var(--primary);
+
+    --primary-container: hsl(29 82% 58%);
+    --on-primary-container: hsl(28 76% 95%);
+    --inverse-primary: hsl(29 74% 45%);
+    --secondary-container: hsl(214 92% 42%);
+    --on-secondary-container: hsl(0 0% 98%);
+    --tertiary: hsl(173 58% 50%);
+    --tertiary-container: hsl(217 97% 48%);
+
+    --primary-fixed: hsl(29 82% 18%);
+    --primary-fixed-dim: hsl(29 82% 28%);
+    --on-primary-fixed: hsl(28 76% 95%);
+    --on-primary-fixed-variant: hsl(29 82% 78%);
+    --secondary-fixed: hsl(214 92% 18%);
+    --secondary-fixed-dim: hsl(214 92% 28%);
+    --on-secondary-fixed: hsl(0 0% 98%);
+    --on-secondary-fixed-variant: hsl(214 92% 80%);
+    --tertiary-fixed: hsl(173 58% 18%);
+    --tertiary-fixed-dim: hsl(173 58% 28%);
+    --on-tertiary-fixed: hsl(0 0% 96%);
+    --on-tertiary-fixed-variant: hsl(173 58% 76%);
+
+    --glass-background: hsl(240 6% 10% / 72%);
+    --glass-background-strong: hsl(240 6% 14% / 88%);
+    --glass-border: hsl(0 0% 100% / 10%);
+    --glass-border-strong: hsl(0 0% 100% / 26%);
+    --cyan-glow: hsl(173 58% 50% / 18%);
+    --indigo-glow: hsl(217 97% 48% / 18%);
+    --selection-background: hsl(29 82% 58% / 30%);
+    --link-decoration: hsl(173 58% 50% / 55%);
+    --focus-ring: hsl(29 82% 58% / 18%);
+    --input-background: hsl(240 6% 9% / 86%);
+    --panel-shadow: hsl(0 0% 0% / 22%);
+    --primary-shadow: hsl(29 82% 58% / 22%);
+    --secondary-shadow: hsl(214 92% 42% / 24%);
+    --dock-background: hsl(240 6% 9% / 78%);
+    --skill-shadow: hsl(29 82% 58% / 22%);
+  }
 }
 
 @theme inline {
@@ -162,10 +291,7 @@
     min-height: 100%;
     margin: 0;
     overflow-x: clip;
-    background:
-      radial-gradient(circle at 20% 0%, rgb(192 193 255 / 12%), transparent 32rem),
-      radial-gradient(circle at 82% 12%, rgb(76 215 246 / 10%), transparent 28rem),
-      var(--background);
+    background: var(--background);
     color: var(--foreground);
     font-family: var(--font-geist-sans), system-ui, sans-serif;
     font-size: 16px;
@@ -173,13 +299,13 @@
   }
 
   ::selection {
-    background: rgb(76 215 246 / 32%);
+    background: var(--selection-background);
     color: var(--on-surface);
   }
 
   a {
     color: inherit;
-    text-decoration-color: rgb(76 215 246 / 55%);
+    text-decoration-color: var(--link-decoration);
     text-underline-offset: 0.18em;
     transition:
       color 180ms ease,
@@ -187,7 +313,7 @@
   }
 
   a:hover {
-    color: var(--tertiary);
+    color: var(--primary);
     text-decoration-color: currentColor;
   }
 
@@ -238,9 +364,9 @@
   input,
   textarea,
   select {
-    border: 1px solid var(--glass-border);
+    border: 1px solid var(--input);
     border-radius: var(--radius-lg);
-    background: rgb(14 14 16 / 82%);
+    background: var(--input-background);
     color: var(--on-surface);
     outline: none;
     transition:
@@ -252,8 +378,8 @@
   input:focus,
   textarea:focus,
   select:focus {
-    border-color: var(--tertiary);
-    box-shadow: 0 0 0 4px rgb(76 215 246 / 14%);
+    border-color: var(--primary);
+    box-shadow: 0 0 0 4px var(--focus-ring);
   }
 }
 
@@ -272,7 +398,7 @@
     border-radius: var(--radius-xl);
     background: var(--glass-background);
     backdrop-filter: blur(12px);
-    box-shadow: 0 24px 80px rgb(0 0 0 / 22%);
+    box-shadow: 0 24px 80px var(--panel-shadow);
     min-width: 0;
   }
 
@@ -281,9 +407,7 @@
     overflow: hidden;
     border: 1px solid var(--glass-border);
     border-radius: var(--radius-xl);
-    background:
-      radial-gradient(circle at var(--spotlight-x, 50%) var(--spotlight-y, 0%), var(--cyan-glow), transparent 18rem),
-      var(--glass-background);
+    background: var(--glass-background);
     padding: 24px;
     backdrop-filter: blur(12px);
     min-width: 0;
@@ -305,13 +429,13 @@
     justify-content: center;
     gap: 0.5rem;
     border-radius: var(--radius-lg);
-    background: linear-gradient(45deg, var(--primary-container), var(--secondary-container));
+    background: var(--primary);
     padding-inline: 1.25rem;
     color: white;
     font-weight: 600;
     text-decoration: none;
     text-align: center;
-    box-shadow: 0 14px 36px rgb(128 131 255 / 22%);
+    box-shadow: 0 14px 36px var(--primary-shadow);
     transition:
       box-shadow 180ms ease,
       transform 180ms ease;
@@ -319,7 +443,7 @@
 
   .btn-primary:hover {
     color: white;
-    box-shadow: 0 18px 48px rgb(76 215 246 / 22%);
+    box-shadow: 0 18px 48px var(--secondary-shadow);
     transform: translateY(-1px);
   }
 
@@ -349,14 +473,33 @@
     color: var(--on-surface);
   }
 
+  .btn-compact {
+    width: fit-content;
+    min-height: 2.5rem;
+    border-radius: var(--radius-md);
+    padding-inline: 1rem;
+    font-size: 0.875rem;
+  }
+
+  .btn-form-submit {
+    justify-self: start;
+    width: auto;
+    min-height: 2.25rem;
+    border-radius: var(--radius-md);
+    padding-inline: 0.875rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    box-shadow: none;
+  }
+
   .chip {
     display: inline-flex;
     align-items: center;
-    border: 1px solid rgb(76 215 246 / 28%);
+    border: 1px solid hsl(29 74% 51% / 24%);
     border-radius: var(--radius-full);
-    background: rgb(76 215 246 / 10%);
+    background: hsl(29 74% 51% / 10%);
     padding: 0.375rem 0.625rem;
-    color: var(--tertiary);
+    color: var(--primary);
     font-family: var(--font-geist-mono), "Space Mono", monospace;
     font-size: 0.75rem;
     font-weight: 500;
@@ -370,9 +513,9 @@
   .dock {
     border: 1px solid var(--glass-border);
     border-radius: var(--radius-full);
-    background: rgb(19 19 21 / 62%);
+    background: var(--dock-background);
     backdrop-filter: blur(20px);
-    box-shadow: 0 18px 60px rgb(0 0 0 / 26%);
+    box-shadow: 0 18px 60px var(--panel-shadow);
   }
 
   .hero-orbit {
@@ -380,7 +523,8 @@
     width: 18rem;
     height: 18rem;
     border-radius: 9999px;
-    background: radial-gradient(circle, rgb(76 215 246 / 18%), transparent 68%);
+    background: var(--primary);
+    opacity: 0.12;
     filter: blur(18px);
     animation: drift 12s ease-in-out infinite alternate;
     pointer-events: none;
@@ -391,8 +535,8 @@
   }
 
   .skill-bar {
-    background: linear-gradient(90deg, var(--tertiary), var(--primary), var(--secondary));
-    box-shadow: 0 0 24px rgb(76 215 246 / 28%);
+    background: var(--primary);
+    box-shadow: 0 0 24px var(--skill-shadow);
   }
 }
 
@@ -437,6 +581,19 @@
     width: 100%;
     min-height: 2.875rem;
     padding-inline: 1rem;
+  }
+
+  .btn-primary.btn-compact,
+  .btn-secondary.btn-compact {
+    width: fit-content;
+    min-height: 2.5rem;
+    padding-inline: 1rem;
+  }
+
+  .btn-form-submit {
+    width: auto;
+    min-height: 2.25rem;
+    padding-inline: 0.875rem;
   }
 
   .dock {

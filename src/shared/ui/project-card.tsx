@@ -12,9 +12,9 @@ export function ProjectCard({ project }: ProjectCardProps) {
   return (
     <article className="glass-card group flex min-h-full flex-col">
       <Link href={`/projects/${project.slug}`} className="no-underline">
-        <div className={`mb-8 h-48 rounded-xl bg-gradient-to-br ${project.gradient} opacity-90 transition group-hover:scale-[1.01]`}>
-          <div className="grid h-full place-items-center bg-black/20 p-6">
-            <span className="font-mono text-xs tracking-[0.1em] text-white/80 uppercase">
+        <div className="mb-8 h-48 rounded-xl border border-glass-border bg-surface-container transition group-hover:scale-[1.01]">
+          <div className="grid h-full place-items-end p-6">
+            <span className="rounded-full border border-primary/20 bg-primary/10 px-3 py-2 font-mono text-xs tracking-[0.1em] text-primary uppercase">
               {project.category} / {project.year}
             </span>
           </div>

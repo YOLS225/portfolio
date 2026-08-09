@@ -1,14 +1,13 @@
+import Image from "next/image";
 import Link from "next/link";
 
 import type { Project } from "@/shared/config/projects";
 import type {
   ProfileData,
-  SiteData,
   SkillLevel,
   TechStackGroup,
   TestimonialItem,
 } from "@/shared/data/portfolio";
-import { CodeWindow } from "@/shared/ui/code-window";
 import { MetricCard } from "@/shared/ui/metric-card";
 import { ProjectCard } from "@/shared/ui/project-card";
 import { SectionHeading } from "@/shared/ui/section-heading";
@@ -16,7 +15,6 @@ import { SectionHeading } from "@/shared/ui/section-heading";
 type HomePageProps = {
   featuredProjects: Project[];
   profile: ProfileData;
-  site: SiteData;
   skillLevels: SkillLevel[];
   stats: { label: string; value: string }[];
   techStack: TechStackGroup[];
@@ -26,7 +24,6 @@ type HomePageProps = {
 export function HomePage({
   featuredProjects,
   profile,
-  site,
   skillLevels,
   stats,
   techStack,
@@ -59,16 +56,21 @@ export function HomePage({
           </div>
         </div>
         <div className="relative z-10 space-y-4">
-          <div className="float-snippet">
-            <CodeWindow
-              lines={[
-                "const developpeur = {",
-                `  name: '${profile.name}',`,
-                "  focus: ['backend', 'fullstack', 'ia'],",
-                "  construit: 'produits scalables',",
-                "};",
-              ]}
-            />
+          <div className="glass-card min-h-[460px] overflow-hidden p-0">
+            <div className="relative h-full min-h-[460px] rounded-xl border border-glass-border bg-surface-container">
+              <Image
+                src="/yoann1.jpeg"
+                alt="Yoann Lasm au travail sur un produit logiciel"
+                fill
+                sizes="(max-width: 1024px) 100vw, 42vw"
+                className="object-cover object-[52%_34%] grayscale"
+                preload
+              />
+              <div className="absolute inset-x-5 bottom-5 rounded-xl border border-glass-border bg-background/88 p-5 backdrop-blur-md">
+                <p className="font-mono text-xs tracking-[0.1em] text-primary uppercase">Architecture / Backend / IA</p>
+                <p className="mt-2 text-lg font-semibold text-on-surface">Produits web fiables, clairs et scalables.</p>
+              </div>
+            </div>
           </div>
           <div className="grid gap-3 sm:grid-cols-2">
             {stats.slice(0, 4).map((stat) => (
@@ -87,7 +89,7 @@ export function HomePage({
         <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-5">
           {techStack.map((group) => (
             <article key={group.category} className="glass-card">
-              <div className="mb-5 grid h-12 w-12 place-items-center rounded-lg border border-tertiary/20 bg-tertiary/10 font-mono text-sm text-tertiary">
+              <div className="mb-5 grid h-12 w-12 place-items-center rounded-lg border border-primary/20 bg-primary/10 font-mono text-sm text-primary">
                 {group.icon}
               </div>
               <h3 className="text-xl">{group.category}</h3>
@@ -125,7 +127,7 @@ export function HomePage({
                 <span>{skill.label}</span>
                 <span>{skill.value}%</span>
               </div>
-              <div className="h-2 overflow-hidden rounded-full bg-white/10">
+              <div className="h-2 overflow-hidden rounded-full bg-surface-container-highest">
                 <div className="skill-bar h-full rounded-full" style={{ width: `${skill.value}%` }} />
               </div>
             </div>
@@ -138,7 +140,9 @@ export function HomePage({
         <div className="grid gap-5 md:grid-cols-3">
           {testimonials.map((testimonial) => (
             <article key={testimonial.name} className="glass-card">
-              <div className="mb-5 h-12 w-12 rounded-full border border-glass-border bg-gradient-to-br from-primary-container to-tertiary-container" />
+              <div className="mb-5 grid h-12 w-12 place-items-center rounded-full border border-primary/20 bg-primary/10 font-mono text-xs text-primary">
+                {testimonial.name.slice(0, 2)}
+              </div>
               <p className="text-lg leading-8">{testimonial.feedback}</p>
               <p className="mt-6 font-semibold text-on-surface">{testimonial.name}</p>
               <p className="font-mono text-xs tracking-[0.1em] text-tertiary uppercase">{testimonial.role}</p>
@@ -147,29 +151,6 @@ export function HomePage({
         </div>
       </section>
 
-      <section className="portfolio-container portfolio-section">
-        <div className="glass-card grid gap-8 lg:grid-cols-[0.8fr_1.2fr]">
-          <div>
-            <p className="chip mb-5">GitHub</p>
-            <h2>Derniers repositories et activite de contribution.</h2>
-            <p className="mt-4">
-              Un apercu visuel pour l&apos;historique de contributions, les repositories recents et l&apos;exploration technique.
-            </p>
-            <a className="btn-secondary mt-6" href={site.socials.github} target="_blank" rel="noreferrer">
-              Voir GitHub
-            </a>
-          </div>
-        <div className="grid grid-cols-7 gap-2 sm:grid-cols-12">
-            {Array.from({ length: 84 }).map((_, index) => (
-              <span
-                key={index}
-                className="aspect-square rounded-sm bg-tertiary/10"
-                style={{ opacity: 0.25 + (index % 7) * 0.1 }}
-              />
-            ))}
-          </div>
-        </div>
-      </section>
     </>
   );
 }

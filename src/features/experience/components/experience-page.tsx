@@ -16,7 +16,7 @@ export function ExperiencePage({ roles }: ExperiencePageProps) {
       />
       <section className="portfolio-container pb-24">
         <SectionHeading eyebrow="Parcours" title="Experience professionnelle et projets." />
-        <div className="relative space-y-6 before:absolute before:left-4 before:top-2 before:h-full before:w-px before:bg-gradient-to-b before:from-tertiary before:to-transparent md:before:left-[11.25rem]">
+        <div className="relative space-y-6 before:absolute before:left-4 before:top-2 before:h-full before:w-px before:bg-primary/30 md:before:left-[11.25rem]">
           {roles.map((role) => (
             <article key={`${role.company}-${role.period}`} className="grid min-w-0 gap-5 pl-9 md:grid-cols-[180px_minmax(0,1fr)] md:pl-0">
               <p className="font-mono text-xs tracking-[0.1em] text-tertiary uppercase">{role.period}</p>

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 import type { ProfileData } from "@/shared/data/portfolio";
 import { CodeWindow } from "@/shared/ui/code-window";
@@ -22,18 +23,17 @@ export function AboutPage({ profile, stats }: AboutPageProps) {
 
       <section className="portfolio-container grid gap-10 pb-24 lg:grid-cols-[0.85fr_1.15fr]">
         <div className="glass-card min-h-[460px] overflow-hidden p-0">
-          <div className="relative h-full min-h-[460px] rounded-xl border border-glass-border bg-gradient-to-br from-primary-container/40 via-secondary-container/25 to-tertiary-container/30">
+          <div className="relative h-full min-h-[460px] rounded-xl border border-glass-border bg-surface-container">
             <Image
-              src="/yoann.png"
+              src="/yoann2.jpeg"
               alt="Portrait de Yoann Lasm"
               fill
               sizes="(max-width: 1024px) 100vw, 38vw"
               className="object-cover object-[50%_28%] grayscale"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent" />
-            <div className="absolute inset-x-6 bottom-6">
-              <p className="font-mono text-xs tracking-[0.1em] text-tertiary uppercase">{profile.role}</p>
-              <p className="mt-2 text-2xl font-semibold text-white">{profile.name}</p>
+            <div className="absolute inset-x-5 bottom-5 rounded-xl border border-glass-border bg-background/88 p-5 backdrop-blur-md">
+              <p className="font-mono text-xs tracking-[0.1em] text-primary uppercase">{profile.role}</p>
+              <p className="mt-2 text-2xl font-semibold text-on-surface">{profile.name}</p>
             </div>
           </div>
         </div>
@@ -45,6 +45,11 @@ export function AboutPage({ profile, stats }: AboutPageProps) {
             donnees, les frontieres de systeme et les fondations produit fiables. J&apos;aime les codebases explicites,
             testables et assez structurees pour evoluer sans ralentir l&apos;equipe.
           </p>
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <Link href="/projects" className="btn-primary">
+              Voir les projets
+            </Link>
+          </div>
           <div className="mt-8 grid gap-3 sm:grid-cols-2">
             {profile.expertise.map((item) => (
               <div key={item} className="glass-panel px-4 py-3 text-on-surface">
