@@ -31,62 +31,49 @@ export function HomePage({
 }: HomePageProps) {
   return (
     <>
-      <section className="portfolio-container relative grid min-h-[92vh] items-center gap-8 overflow-hidden pt-44 pb-14 sm:pt-36 sm:pb-16 lg:min-h-[96vh] lg:grid-cols-[1.1fr_0.9fr]">
-        <div className="hero-orbit left-[8%] top-[18%]" />
-        <div className="hero-orbit right-[12%] bottom-[18%]" />
-        <div className="relative z-10">
-          <p className="chip mb-6">{profile.role}</p>
-          <h1 className="max-w-4xl text-balance">{profile.name}</h1>
-          <div className="mt-5 flex flex-wrap gap-2 font-mono text-xs tracking-[0.1em] text-tertiary uppercase sm:gap-3 sm:text-sm">
-            {profile.roles.map((role) => (
-              <span key={role}>{role}</span>
-            ))}
+      <section className="portfolio-container home-hero">
+        <div className="hero-portrait">
+          <div className="hero-photo">
+            <Image
+              src="/yoann1.jpeg"
+              alt="Yoann Lasm au travail sur un produit logiciel"
+              fill
+              sizes="(max-width: 768px) 90vw, 40vw"
+              className="hero-image"
+              preload
+            />
           </div>
-          <p className="mt-6 max-w-2xl text-base leading-7 sm:text-lg sm:leading-8">{profile.intro}</p>
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <Link href="/projects" className="btn-primary">
-              Voir les projets
-            </Link>
-            <a href="/resume" className="btn-secondary" download>
-              Télécharger le CV
-            </a>
-            <Link href="/contact" className="btn-secondary">
-              Me contacter
-            </Link>
-          </div>
+          <span className="portrait-caption">Architecture / Backend / IA</span>
+          <Link href="/contact" className="hero-contact" aria-label="Discutons de votre projet">
+            <span>Un projet ?</span>
+            <span aria-hidden="true">↗</span>
+          </Link>
         </div>
-        <div className="relative z-10 space-y-4">
-          <div className="glass-card min-h-[460px] overflow-hidden p-0">
-            <div className="relative h-full min-h-[460px] rounded-xl border border-glass-border bg-surface-container">
-              <Image
-                src="/yoann1.jpeg"
-                alt="Yoann Lasm au travail sur un produit logiciel"
-                fill
-                sizes="(max-width: 1024px) 100vw, 42vw"
-                className="object-cover object-[52%_34%] grayscale"
-                preload
-              />
-              <div className="absolute inset-x-5 bottom-5 rounded-xl border border-glass-border bg-background/88 p-5 backdrop-blur-md">
-                <p className="font-mono text-xs tracking-[0.1em] text-primary uppercase">Architecture / Backend / IA</p>
-                <p className="mt-2 text-lg font-semibold text-on-surface">Produits web fiables, clairs et scalables.</p>
-              </div>
-            </div>
-          </div>
-          <div className="grid gap-3 sm:grid-cols-2">
-            {stats.slice(0, 4).map((stat) => (
-              <MetricCard key={stat.label} label={stat.label} value={stat.value} />
-            ))}
+        <div className="hero-copy">
+          <p className="hero-eyebrow">Bonjour, je suis</p>
+          <h1>{profile.name}<span className="text-primary">.</span></h1>
+          <h2 className="hero-statement">Je construis des produits web fiables et intuitifs.</h2>
+          <p className="hero-role">{profile.role}</p>
+          <p className="hero-intro">{profile.intro}</p>
+          <div className="hero-actions">
+            <Link href="/projects" className="btn-primary">Voir mes projets <span aria-hidden="true">↗</span></Link>
+            <Link href="/about" className="btn-secondary">À propos de moi</Link>
           </div>
         </div>
       </section>
+      <div className="portfolio-container home-stats">
+        {stats.slice(0, 4).map((stat) => (
+          <MetricCard key={stat.label} label={stat.label} value={stat.value} />
+        ))}
+      </div>
 
       <section className="portfolio-container portfolio-section">
         <SectionHeading
-          eyebrow="Stack technique"
-          title="Des outils pour le web, le backend, le cloud, la data et l'IA."
-          description="Une stack pragmatique orientee livraison moderne, architecture maintenable et applications pretes pour la production."
+          eyebrow="Ma boîte à outils"
+          title="De l’idée à la mise en production."
+          description="Les technologies que j’utilise pour concevoir, développer et livrer des applications solides."
         />
-        <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-5">
+        <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
           {techStack.map((group) => (
             <article key={group.category} className="glass-card">
               <div className="mb-5 grid h-12 w-12 place-items-center rounded-lg border border-primary/20 bg-primary/10 font-mono text-sm text-primary">
@@ -108,8 +95,8 @@ export function HomePage({
 
       <section className="portfolio-container portfolio-section">
         <SectionHeading
-          eyebrow="Projets selectionnes"
-          title="Applications et API construites sur des bases techniques solides."
+          eyebrow="Projets sélectionnés"
+          title="Une sélection de mon travail."
         />
         <div className="grid gap-6 md:grid-cols-2">
           {featuredProjects.map((project) => (
@@ -119,7 +106,7 @@ export function HomePage({
       </section>
 
       <section className="portfolio-container portfolio-section grid gap-10 lg:grid-cols-[0.85fr_1.15fr]">
-        <SectionHeading eyebrow="Competences" title="Une execution equilibree entre produit et engineering." />
+        <SectionHeading eyebrow="Compétences" title="Du produit à l’architecture." />
         <div className="glass-card space-y-5">
           {skillLevels.map((skill) => (
             <div key={skill.label}>
@@ -136,7 +123,7 @@ export function HomePage({
       </section>
 
       <section className="portfolio-container portfolio-section">
-        <SectionHeading eyebrow="Temoignages" title="Une collaboration senior, claire et pragmatique." />
+        <SectionHeading eyebrow="Témoignages" title="Leurs mots, notre collaboration." />
         <div className="grid gap-5 md:grid-cols-3">
           {testimonials.map((testimonial) => (
             <article key={testimonial.name} className="glass-card">
@@ -151,6 +138,11 @@ export function HomePage({
         </div>
       </section>
 
+      <section className="portfolio-container home-contact-section">
+        <p className="hero-eyebrow">Et si on travaillait ensemble ?</p>
+        <h2>Une idée en tête<span className="text-primary"> ?</span></h2>
+        <Link href="/contact" className="btn-primary">Parlons de votre projet <span aria-hidden="true">↗</span></Link>
+      </section>
     </>
   );
 }

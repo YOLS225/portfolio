@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
@@ -49,6 +50,14 @@ export function ProjectDetailPage({ project }: ProjectDetailPageProps) {
           </div>
         </div>
       </section>
+
+      {project.coverImage ? (
+        <section className="portfolio-container pb-12">
+          <div className="relative aspect-video overflow-hidden rounded-xl border border-glass-border bg-surface-container">
+            <Image src={project.coverImage.url} alt={project.coverImage.alt} fill sizes="(max-width: 768px) 100vw, 1200px" className="object-contain" />
+          </div>
+        </section>
+      ) : null}
 
       <section className="portfolio-container grid gap-6 pb-20 md:grid-cols-3">
         {project.metrics.map((metric) => (

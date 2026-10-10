@@ -1,6 +1,7 @@
 import { postgresAdapter } from "@payloadcms/db-postgres";
 import { buildConfig } from "payload";
 
+import { Media } from "./src/collections/Media.ts";
 import { Experiences } from "./src/collections/Experiences.ts";
 import { Projects } from "./src/collections/Projects.ts";
 import { Skills } from "./src/collections/Skills.ts";
@@ -18,12 +19,13 @@ export default buildConfig({
     user: Users.slug,
   },
   bin: [
+    { key: "import-media", scriptPath: "src/import-media.ts" },
     {
       key: "seed",
       scriptPath: "src/seed.ts",
     },
   ],
-  collections: [Users, Projects, Experiences, Skills, TechStacks, Testimonials],
+  collections: [Users, Media, Projects, Experiences, Skills, TechStacks, Testimonials],
   globals: [Profile, SiteSettings],
   db: postgresAdapter({
     pool: {

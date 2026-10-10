@@ -12,6 +12,7 @@ export type Project = {
   gradient: string;
   githubUrl: string;
   liveUrl?: string;
+  coverImage?: { url: string; alt: string };
 };
 
 export const projects: Project[] = [

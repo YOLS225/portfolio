@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 
 import type { ProfileData } from "@/shared/data/portfolio";
@@ -22,21 +21,28 @@ export function AboutPage({ profile, stats }: AboutPageProps) {
       />
 
       <section className="portfolio-container grid gap-10 pb-24 lg:grid-cols-[0.85fr_1.15fr]">
-        <div className="glass-card min-h-[460px] overflow-hidden p-0">
-          <div className="relative h-full min-h-[460px] rounded-xl border border-glass-border bg-surface-container">
-            <Image
-              src="/yoann2.jpeg"
-              alt="Portrait de Yoann Lasm"
-              fill
-              sizes="(max-width: 1024px) 100vw, 38vw"
-              className="object-cover object-[50%_28%] grayscale"
-            />
-            <div className="absolute inset-x-5 bottom-5 rounded-xl border border-glass-border bg-background/88 p-5 backdrop-blur-md">
-              <p className="font-mono text-xs tracking-[0.1em] text-primary uppercase">{profile.role}</p>
-              <p className="mt-2 text-2xl font-semibold text-on-surface">{profile.name}</p>
-            </div>
+        <aside className="engineering-panel" aria-label="Ma démarche de résolution de problèmes">
+          <div className="engineering-panel-top">
+            <span className="section-eyebrow">Penser en systèmes</span>
+            <span className="font-mono text-xs text-on-surface-variant">01 → 04</span>
           </div>
-        </div>
+          <h2 className="mt-8 text-3xl">De la complexité<br />à la clarté<span className="text-primary">.</span></h2>
+          <p className="mt-4 text-sm leading-7">Décomposer le problème. Relier les idées. Construire une solution qui tient.</p>
+          <ol className="engineering-steps">
+            {[
+              { title: "Comprendre", detail: "Questionner le besoin, les usages et les contraintes." },
+              { title: "Décomposer", detail: "Isoler les causes, les responsabilités et les dépendances." },
+              { title: "Concevoir", detail: "Comparer les options et choisir des compromis explicites." },
+              { title: "Valider", detail: "Tester, mesurer et améliorer avec le retour du terrain." },
+            ].map((step, index) => (
+              <li key={step.title}>
+                <span className="engineering-step-number" aria-hidden="true">0{index + 1}</span>
+                <div><h3 className="text-base">{step.title}</h3><p className="mt-1 text-sm leading-6">{step.detail}</p></div>
+              </li>
+            ))}
+          </ol>
+          <div className="engineering-result"><span aria-hidden="true">↗</span> Une solution simple, testable et évolutive.</div>
+        </aside>
 
         <div>
           <SectionHeading eyebrow="Profil" title="Solidite backend, sensibilite produit et execution disciplinee." />

@@ -38,12 +38,11 @@ yarn-error.log*
 .vercel
 /.idea
 AGENTS.md
-CLAUDE.md
-DESIGN.md
-DESIGN_2.md
-DESIGN_project_page.md
-DESIGN_screen.md
+
 
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Payload local uploads
+/media/

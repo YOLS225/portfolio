@@ -15,6 +15,8 @@ export const Projects: CollectionConfig = {
     { name: "year", type: "text", required: true },
     { name: "category", type: "text", required: true },
     { name: "featured", type: "checkbox", defaultValue: false },
+    { name: "coverImage", label: "Image de couverture", type: "upload", relationTo: "media",
+      admin: { description: "Importez ou sélectionnez une capture dans la médiathèque." } },
     { name: "summary", type: "textarea", required: true },
     { name: "outcome", type: "textarea" },
     { name: "role", type: "text" },

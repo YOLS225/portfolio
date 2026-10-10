@@ -68,6 +68,7 @@ export interface Config {
   blocks: {};
   collections: {
     users: User;
+    media: Media;
     projects: Project;
     experiences: Experience;
     skills: Skill;
@@ -81,6 +82,7 @@ export interface Config {
   collectionsJoins: {};
   collectionsSelect: {
     users: UsersSelect<false> | UsersSelect<true>;
+    media: MediaSelect<false> | MediaSelect<true>;
     projects: ProjectsSelect<false> | ProjectsSelect<true>;
     experiences: ExperiencesSelect<false> | ExperiencesSelect<true>;
     skills: SkillsSelect<false> | SkillsSelect<true>;
@@ -158,6 +160,28 @@ export interface User {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "media".
+ */
+export interface Media {
+  id: number;
+  /**
+   * Décrivez la capture pour les lecteurs d’écran.
+   */
+  alt: string;
+  updatedAt: string;
+  createdAt: string;
+  url?: string | null;
+  thumbnailURL?: string | null;
+  filename?: string | null;
+  mimeType?: string | null;
+  filesize?: number | null;
+  width?: number | null;
+  height?: number | null;
+  focalX?: number | null;
+  focalY?: number | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "projects".
  */
 export interface Project {
@@ -167,6 +191,10 @@ export interface Project {
   year: string;
   category: string;
   featured?: boolean | null;
+  /**
+   * Importez ou sélectionnez une capture dans la médiathèque.
+   */
+  coverImage?: (number | null) | Media;
   summary: string;
   outcome?: string | null;
   role?: string | null;
@@ -288,6 +316,10 @@ export interface PayloadLockedDocument {
         value: number | User;
       } | null)
     | ({
+        relationTo: 'media';
+        value: number | Media;
+      } | null)
+    | ({
         relationTo: 'projects';
         value: number | Project;
       } | null)
@@ -373,6 +405,24 @@ export interface UsersSelect<T extends boolean = true> {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "media_select".
+ */
+export interface MediaSelect<T extends boolean = true> {
+  alt?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  url?: T;
+  thumbnailURL?: T;
+  filename?: T;
+  mimeType?: T;
+  filesize?: T;
+  width?: T;
+  height?: T;
+  focalX?: T;
+  focalY?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "projects_select".
  */
 export interface ProjectsSelect<T extends boolean = true> {
@@ -381,6 +431,7 @@ export interface ProjectsSelect<T extends boolean = true> {
   year?: T;
   category?: T;
   featured?: T;
+  coverImage?: T;
   summary?: T;
   outcome?: T;
   role?: T;

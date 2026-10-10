@@ -109,6 +109,9 @@ function mapProject(project: PayloadProject): Project {
     gradient: project.gradient || "from-primary-container via-secondary-container to-tertiary-container",
     githubUrl: project.githubUrl || "https://github.com/",
     liveUrl: project.liveUrl?.trim() || undefined,
+    coverImage: project.coverImage && typeof project.coverImage === "object" && project.coverImage.url
+      ? { url: project.coverImage.url, alt: project.coverImage.alt || project.title }
+      : undefined,
   };
 }
 
@@ -200,7 +203,7 @@ export async function getProjectsData(): Promise<Project[]> {
     const payload = await getPayloadClient();
     const result = await payload.find({
       collection: "projects",
-      depth: 0,
+      depth: 1,
       limit: 100,
       sort: "-featured,-year,title",
     });
@@ -223,7 +226,7 @@ export async function getProjectDataBySlug(slug: string): Promise<Project | unde
     const payload = await getPayloadClient();
     const result = await payload.find({
       collection: "projects",
-      depth: 0,
+      depth: 1,
       limit: 1,
       where: {
         slug: {
